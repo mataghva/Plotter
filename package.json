@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development",
+    "dev": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "engines": {

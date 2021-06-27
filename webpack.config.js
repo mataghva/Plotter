@@ -1,5 +1,4 @@
 module.exports = {
-    mode: 'development',
     entry: "./src/js/app.js", //file that webpack will read to create giant file w/ all of our js in it
     output: {
         path: `${__dirname}/dist`, //absolute path of the directory that contains the file that is currently executing (.resolve is from the require path)

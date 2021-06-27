@@ -134,7 +134,7 @@ for (let i = 0; i < dataset.length; i++) {
 var lineGraph = svg.append("g")
                     .append("path")
                     .attr("d", lineFunction(lineData))
-                    .attr("stroke-width", 2)
+                    .attr("stroke-width", 4)
                     .attr("stroke", graphColor)
                     .attr("fill", "none");
 

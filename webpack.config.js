@@ -1,8 +1,7 @@
-const path = require("path"); //gives us access to path.resolve
 module.exports = {
     entry: "./src/js/app.js", //file that webpack will read to create giant file w/ all of our js in it
     output: {
-        path: path.resolve(__dirname, "dist"), //absolute path of the directory that contains the file that is currently executing (.resolve is from the require path)
+        path: `${__dirname}/dist`, //absolute path of the directory that contains the file that is currently executing (.resolve is from the require path)
         filename: 'bundle.js' //what we want the file to be called once we output
     },
     devtool: 'source-map', //helpful for debugging -- if we have an err in code, this will tell what line the err is on

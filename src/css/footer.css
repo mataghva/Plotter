@@ -1,0 +1,21 @@
+#github-logo {
+    width: 40px;
+    vertical-align: middle;
+}
+
+#linkedin-logo {
+    width: 50px;
+    vertical-align: middle;
+}
+
+.links {
+    text-align: right;
+    margin-right: 30px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 7vh;
+    bottom: 0;
+}

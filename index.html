@@ -4,10 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="bundle.js"></script>
     <title>Plotter</title>
 </head>
 <body>
-    
+    <label>Function:
+        <input id="function" type="text" value="sin(x)">
+    </label>
+    <br>
+    <br>
+    <label>X-Domain:
+        <input id="x-domain" type="number" value= 5>
+    </label>
+    <br>
+    <label>Y-Domain:
+        <input id="y-domain" type="number" value= 5>
+    </label>
+    <br>
+    <label>Exclude Xs:
+        <input id="ex-points" type="text" value="">
+    </label>
+    <br>
+    <input id="zeroCheck" name="zeroCheck" type="checkbox">
+    <label for="zeroCheck">Exclude X=0</label>
+    <br>
+    <input id="negCheck" name="negCheck" type="checkbox">
+    <label for="negCheck">Exclude negative X</label>
+    <br>
+    <label for="color">Color:</label>
+    <select name="color" id="graph-color">
+        <option value="blue" selected>Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="black">Black</option>
+    </select>
+    <br>
+    <div id="graph"></div>
+    <script src="./dist/bundle.js"></script>
 </body>
+<footer>
+    <div class="links">
+        <a id="linkedin-link" href="https://www.linkedin.com/in/mohammad-ali-taghva-4b06b237">
+            <img id="linkedin-logo" src="./src/images/LinkedIn_UI-03-512.png" alt="LinkedIn Logo"></a>
+        <a id="github-link" href="https://github.com/mataghva/Plotter.git">
+            <img id="github-logo" src="./src/images/GitHub-Mark.png" alt="GitHub Logo"></a>
+    </div>
+</footer>
 </html>

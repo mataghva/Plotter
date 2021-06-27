@@ -1,5 +1,5 @@
 {
-  "name": "Plotter",
+  "name": "plotter",
   "version": "1.0.0",
   "description": "An API which enable user to enter a mathematical function and see the graph",
   "main": "index.js",

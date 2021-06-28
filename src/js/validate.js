@@ -7,7 +7,7 @@ function validate (func) {
         RegExp.quote = function(str) {
             return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
         };
-        func = func.toLowerCase().replace(/math.|delete|drop|copy|format/g, "");
+        func = func.toLowerCase().replace(/math.|delete|drop|copy|format|edit|destroy|register|get|post|put|new/g, "");
         for (let i = 0; i < mathFuncs.length; i++) {
             reg = new RegExp(RegExp.quote(mathFuncs[i]), "g");
             func = func.replace(reg, `Math.${mathFuncs[i].toUpperCase()}`);

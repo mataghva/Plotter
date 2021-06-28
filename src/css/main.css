@@ -1,8 +1,18 @@
-#graph {
-    position: relative;
-    width: 100%;
-    margin-top: 10vh;
+.header {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30pt;
+    font-weight: 700;
     text-align: center;
+    margin-top: 10px;
+    color: rgb(59, 58, 58);
+}
+
+#graph {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    margin-top: -250px;
+    margin-left: -200px;
 }
 
 .x-label, .y-label {
@@ -10,4 +20,120 @@
     fill: red;
     font-weight: bold;
 }
+
+body {
+    background-color: rgb(212, 225, 226);
+}
+
+.svg {
+    border: 1px solid black;
+    
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 4px 4px 15px 4px black;
+}
+
+.settings {
+    width: 300px;
+    position: relative;
+    top: 30px;
+    margin-left: 30px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px 1px gray;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.input, .color {
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: rgb(212, 225, 226);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0 10px 0 10px;
+
+}
+
+.input:focus, .function:focus, .color:focus {
+    background-color: rgba(145, 171, 211, 0.267);
+    outline: none !important;
+    border: 2px solid rgba(39, 14, 129, 0.692);
+    
+}
+
+.function{
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: rgb(212, 225, 226);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px 0 10px;
+}
+.input:hover, .function:hover, .color:hover {
+    cursor: pointer;
+}
+
+.function-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.checkbox {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+h3.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+    font-weight: bold;
+    margin: 60px 0 5px 30px;
+}
+
+.instruction {
+    position: absolute;
+    margin-left: 30px;
+    /* margin-top: 60px; */
+    width: 420px;
+    height: 300px;
+    line-height: 17px;
+    overflow-y: scroll;
+
+}
+
+.help {
+    position: relative;
+    list-style: square;
+    margin-left: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.usable-functions {
+    position: relative;
+    list-style: circle;
+    margin-left: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+
+
 

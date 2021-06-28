@@ -4,49 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="./src/images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./src/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Plotter</title>
 </head>
+<header class="header">Plotter</header>
 <body>
-    <label>Function:
-        <input id="function" type="text" value="sin(x)">
-    </label>
+    <div class="settings">
+        <label class="function-label" for="function">Function</label>
+        <input class="function" id="function" type="text" value="sin(x)">
+        
+        <br>
+        <label class="label" for="x-domain">X-Domain</label>
+            <input class="input" id="x-domain" type="number" value= 5>
+        
+        <br>
+        <label class="label" for="y-domain">Y-Domain</label>
+            <input class="input" id="y-domain" type="number" value= 5>
+        
+        <br>
+        <label class="label" for="x-points">Exclude Xs</label>
+            <input class="input" id="ex-points" type="text" value="">
+        <br>
+        <div class="checkbox">
+            <label class="checkbox-label"></label><input id="zeroCheck" type="checkbox">Exclude X=0</label>
+            <br>
+            <label class="checkbox-label"></label><input id="negCheck" type="checkbox">Exclude negative X</label>
+            <br>
+            <br>
+        </div>
+        <label class="label" for="color">Color</label>
+        <select class="color" name="color" id="graph-color">
+            <option value="blue" selected>Blue</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="purple">Purple</option>
+            <option value="black">Black</option>
+        </select>
+        <br>
+    </div>
     <br>
     <br>
-    <label>X-Domain:
-        <input id="x-domain" type="number" value= 5>
-    </label>
-    <br>
-    <label>Y-Domain:
-        <input id="y-domain" type="number" value= 5>
-    </label>
-    <br>
-    <label>Exclude Xs:
-        <input id="ex-points" type="text" value="">
-    </label>
-    <br>
-    <input id="zeroCheck" name="zeroCheck" type="checkbox">
-    <label for="zeroCheck">Exclude X=0</label>
-    <br>
-    <input id="negCheck" name="negCheck" type="checkbox">
-    <label for="negCheck">Exclude negative X</label>
-    <br>
-    <label for="color">Color:</label>
-    <select name="color" id="graph-color">
-        <option value="blue" selected>Blue</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="purple">Purple</option>
-        <option value="black">Black</option>
-    </select>
-    <br>
-    <div id="graph"></div>
-    <script src="./dist/bundle.js"></script>
+    <h3 class="title">Instructions</h3>
+    <div class="instruction">
+        <ul>
+            <li class="help">Insert your desired function in the Function box</li>
+            <li class="help">The graph will be generated automatically</li>
+            <li class="help">Set X and Y domains properly</li>
+            <li class="help">Exclude X=0 or negative Xs if they make the function undefined 
+                            (Ex. Y=log(X) is undefined at X=0 and negative Xs)</li>
+            <li class="help">The Plotter is smart and it activates the options for excluding X=0 and 
+                            negative Xs if the function includes log(X)</li>
+            <li class="help">Exclude other points if they make the function undefined (Ex. Y=1/(X+1) is undefined at X=-1)</li>
+            <li class="help">Use parentheses properly to define the function correctly. 
+                            The statements inside the parentheses are evaluated before other parts of the function. 
+                            (Ex. Y=(X+2)/3 is not equal to Y=X+(2/3))</li>
+            <li class="help">Use * as multiplication operator</li>
+            <li class="help">Use ** as power operator</li>
+            <li class="help">The function is not case-sensitive.</li>
+            <li class="help">You can use these functions:</li>
+                <ul>
+                    <li class="usable-functions">Polynomials (Ex. x**4 + x**3 + x**2 + x + 1)</li>
+                    <li class="usable-functions">Trigonometric functions: sin(x), cos(x) and tan(x)</li>
+                    <li class="usable-functions">Hyperbolic functions: sinh(x), cosh(x) and tanh(x)</li>
+                    <li class="usable-functions">Arc functions: asin(x), acos(x) and atan(x)</li>
+                    <li class="usable-functions">Logarithm functions: log(x), log10(x)</li>
+                    <li class="usable-functions">Exponential functions: exp(x)</li>
+                </ul>
+            <li class="help">You can change the color of graph</li>
+        </ul>
+    </div>
+        <div id="graph">
+            <script src="./dist/bundle.js"></script>
+        </div>
 </body>
-<footer>
+<footer class="footer">
+    <div class="developer">
+        Designed and developed by: Mohammad Ali Taghva
+    </div>
     <div class="links">
         <a id="linkedin-link" href="https://www.linkedin.com/in/mohammad-ali-taghva-4b06b237">
             <img id="linkedin-logo" src="./src/images/LinkedIn_UI-03-512.png" alt="LinkedIn Logo"></a>

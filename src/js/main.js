@@ -107,14 +107,14 @@ svg.append("text")
     .attr("text-anchor", "end")
     .attr("x", w)
     .attr("y", (h/2)-2)
-    .text("X")
+    .text("x")
 
 svg.append("text")
     .attr("class", "y-label")
     .attr("text-anchor", "front")
     .attr("x", (w/2)+2)
     .attr("y", 12)
-    .text("Y")
+    .text("y")
 
 
 var lineFunction = d3.line()
@@ -134,7 +134,7 @@ for (let i = 0; i < dataset.length; i++) {
 var lineGraph = svg.append("g")
                     .append("path")
                     .attr("d", lineFunction(lineData))
-                    .attr("stroke-width", 4)
+                    .attr("stroke-width", 3)
                     .attr("stroke", graphColor)
                     .attr("fill", "none");
 

@@ -1,9 +1,12 @@
 .header {
+    display: inline-block;
+    position: absolute;
     font-family: 'Dancing Script', cursive;
     font-size: 30pt;
     font-weight: 700;
-    text-align: center;
     margin-top: 10px;
+    left: 50%;
+    margin-left: 100px;
     color: rgb(59, 58, 58);
 }
 

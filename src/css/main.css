@@ -70,6 +70,7 @@ body {
 }
 
 .function{
+    position: relative;
     height: 30px;
     border: 1px solid black;
     border-radius: 3px;
@@ -79,10 +80,13 @@ body {
     font-weight: bold;
     padding: 0 10px 0 10px;
 }
-.input:hover, .function:hover, .color:hover {
-    cursor: pointer;
+.input:hover, .function:hover {
+    cursor: text;
 }
 
+.color:hover {
+    cursor: pointer;
+}
 .function-label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -99,6 +103,10 @@ body {
 .checkbox {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+}
+
+.checkbox:hover {
+    cursor: pointer
 }
 
 h3.title {
@@ -139,6 +147,19 @@ h3.title {
     padding-top: 3px;
 }
 
+.errMessage {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-left: 5px;
+    margin-top: 50px;
+    color: red;
+}
 
-
+.focusDataLabel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    fill: red;
+}
 

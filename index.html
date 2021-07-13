@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./src/images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./src/images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="./src/images/favicon_io/site.webmanifest">
     <title>Plotter</title>
 </head>
 <header class="header">Plotter</header>
@@ -16,7 +16,8 @@
     <div class="settings">
         <label class="function-label" for="function">Function</label>
         <input class="function" id="function" type="text" value="sin(x)">
-        
+        <p class="errMessage" id="errMessage"></p>
+        <br>
         <br>
         <label class="label" for="x-domain">X-Domain</label>
             <input class="input" id="x-domain" type="number" value= 5>
@@ -30,7 +31,7 @@
             <input class="input" id="ex-points" type="text" value="" placeholder="example: 0, 1, -1">
         <br>
         <div class="checkbox">
-            <label class="checkbox-label"></label><input id="zeroCheck" type="checkbox">Exclude X=0</label>
+            <label class="checkbox-label"></label><input id="posCheck" type="checkbox">Exclude positive X</label>
             <br>
             <label class="checkbox-label"></label><input id="negCheck" type="checkbox">Exclude negative X</label>
             <br>

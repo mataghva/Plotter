@@ -43,8 +43,10 @@ exPointsElement.addEventListener('input', (e) => {
 
 let colorElement = document.getElementById("graph-color");
 let graphColor = colorElement.value;
+let focusColor = (graphColor === "red" || graphColor === "purple") ? "blue" : "red";
 colorElement.addEventListener('input', (e) => {
     graphColor = e.target.value;
+    focusColor = (graphColor === "red" || graphColor === "purple") ? "blue" : "red";
     updateData();
 });
 
@@ -69,8 +71,6 @@ funcElement.addEventListener('input', (e) => {
     updateData();
 });
 
-// validFunc = validate(func);
-
 let svg = d3.select("#graph").append("svg")
 .attr("class", "svg")
 .attr("width", w)
@@ -88,8 +88,8 @@ let yScale = d3.scaleLinear()
        .domain([-yDomain, yDomain])
        .range([h - padding, padding]);
 
-for (let i = -250; i < 250; i++) {
-    x = (i/250) * xDomain;
+for (let i = -500; i < 500; i++) {
+    x = (i/500) * xDomain;
     y = eval(validFunc);
     if (y >= (2 * yDomain) || 
         y <= -(2 * yDomain) ||
@@ -148,8 +148,8 @@ let lineGraph = svg.append("g")
 let focus = svg
             .append("g")
             .append("circle")
-            .style("fill", "red")
-            .attr("stroke", "black")
+            .style("fill", focusColor)
+            .attr("stroke", focusColor)
             .attr("r", 4)
             .style("opacity", 0);
 
@@ -161,6 +161,7 @@ let focusText = svg
 let focusTextX = focusText
                 .append("text")
                 .style("opacity", 0)
+                .style("fill", focusColor)
                 .attr("class", "focusDataLabel")
                 .attr("text-anchor", "left")
                 .attr("alignment-baseline", "middle")
@@ -168,6 +169,7 @@ let focusTextX = focusText
 let focusTextY = focusText
                 .append("text")
                 .style("opacity", 0)
+                .style("fill", focusColor)
                 .attr("class", "focusDataLabel")
                 .attr("text-anchor", "left")
                 .attr("alignment-baseline", "middle")
@@ -194,12 +196,13 @@ function mousemove(event) {
     let selectedData = dataset[i];
     let xOffset = 10;
     let yOffset = 0;
-    if (selectedData[1] === null ||
-        yScale(selectedData[1]) < 0 ||
-        yScale(selectedData[1]) > h) {
+    if (selectedData === undefined || 
+        selectedData[1] === null || isNaN(selectedData[1]) ||
+        (yScale(selectedData[1]) < 0 ||
+        yScale(selectedData[1]) > h)) {
         focus.style("opacity", 0)
         focusTextX.style("opacity", 0)
-        focusTextY.style("opacity", 0)
+        focusTextY.style("opacity", 0)  
     } else {
         if (xScale(selectedData[0]) > w - 85) {xOffset = -70;};
         if (yScale(selectedData[1]) < 15) {yOffset = 10;};
@@ -211,7 +214,7 @@ function mousemove(event) {
         focusTextX
             .style("opacity", 1)
             .html("x: " + Math.round(selectedData[0] * 1000)/1000)
-            .attr("x", xScale(selectedData[0]) + xOffset+ 10)
+            .attr("x", xScale(selectedData[0]) + xOffset + 10)
             .attr("y", yScale(selectedData[1]) + yOffset - 7);
         
         focusTextY
@@ -246,8 +249,8 @@ function updateData() {
         .call(d3.axisLeft(yScale));   
 
     dataset = [];
-    for (let i = -200; i < 200; i++) {
-        x = (i/200) * xDomain;
+    for (let i = -500; i < 500; i++) {
+        x = (i/500) * xDomain;
         y = eval(validFunc);
         if (y >= (2 * yDomain) || 
             y <= -(2 * yDomain) ||
@@ -257,7 +260,6 @@ function updateData() {
             {y = null};
         dataset.push([x, y])
     };
-    console.log("newDataSet   ", dataset)
     lineData = []
     for (let i = 0; i < dataset.length; i++) {
             lineData.push([xScale(dataset[i][0]), 
@@ -269,6 +271,13 @@ function updateData() {
         .duration(500)
         .attr("d", lineFunction(lineData))
         .attr("stroke", graphColor);
+
+    focus  
+        .style("fill", focusColor)
+        .attr("stroke", focusColor);
+
+    focusTextX.style("fill", focusColor);
+    focusTextY.style("fill", focusColor);
 
 };
 

@@ -68,7 +68,7 @@ funcElement.addEventListener('input', (e) => {
     //     negCheckElement.checked = true;
     //     excludeNeg = true;
     // }
-    updateData();
+    if (errorMessage === "") updateData();
 });
 
 let svg = d3.select("#graph").append("svg")
@@ -247,7 +247,7 @@ function updateData() {
     yAxis.transition()
         .duration(750)
         .call(d3.axisLeft(yScale));   
-
+    
     dataset = [];
     for (let i = -500; i < 500; i++) {
         x = (i/500) * xDomain;
@@ -260,6 +260,7 @@ function updateData() {
             {y = null};
         dataset.push([x, y])
     };
+    
     lineData = []
     for (let i = 0; i < dataset.length; i++) {
             lineData.push([xScale(dataset[i][0]), 
